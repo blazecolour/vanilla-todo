@@ -56,7 +56,6 @@ const app = () => {
   };
 
   const addTask = () => {
-    console.log('Add Task...');
     const listAddTask = createNewTaskElement(taskInput.value);
     incompleteTasksHolder.appendChild(listAddTask);
     bindTaskEvents(listAddTask, taskCompleted);
