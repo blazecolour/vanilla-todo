@@ -1,5 +1,22 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const fs = require('fs')
+
+function generateHtmlPlugins(templateDir) {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  return templateFiles.map(item => {
+    const parts = item.split('.');
+    const name = parts[0];
+    const extension = parts[1];
+    return new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+      inject: false,
+    })
+  })
+}
+
+const htmlPlugins = generateHtmlPlugins('./src/html/views')
 
 module.exports = {
   entry: ['./src/js/index.js', './src/scss/style.scss'],
@@ -47,5 +64,5 @@ module.exports = {
       filename: './css/style.bundle.css',
       allChunks: true
     })
-  ]
+  ].concat(htmlPlugins)
 };
