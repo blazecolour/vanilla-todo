@@ -2,13 +2,12 @@
   "name": "vanilla-todo",
   "version": "1.0.0",
   "description": "vanilla-todo",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
-    "start": "webpack-dev-server --mode development --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
