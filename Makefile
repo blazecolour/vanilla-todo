@@ -13,7 +13,7 @@ build:
 		npm run build
 
 lint: 
-		npm run eslint .
+		npm run eslint src
 
 watch: 
 		npm run watch
