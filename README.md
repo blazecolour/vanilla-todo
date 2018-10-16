@@ -18,4 +18,4 @@ Install dependencies:
 make install
 ```
 
-**[Demo](https://codepen.io/blazecolour/full/zJLRmd/)**
+**[Demo](http://massive-nation.surge.sh/)**
